@@ -52,5 +52,7 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.lottie)
+
     implementation(project(":core:ui"))
 }
