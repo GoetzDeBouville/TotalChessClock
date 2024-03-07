@@ -22,6 +22,9 @@ dependencyResolutionManagement {
 rootProject.name = "ChessClocks"
 include(":app")
 include(":database")
-include(":mylibrary")
-include(":clock")
-include(":settings")
+include(":features:settings")
+include(":core:database")
+include(":features:clocks")
+include(":features:customizeclocks")
+include(":features:mainscreen")
+include(":features:fideevents")
