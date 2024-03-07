@@ -1,4 +1,4 @@
-package com.hellcorp.fideevents
+package com.hellcorp.network.dto
 
 data class Thumbnail(
     val id: Int,
