@@ -46,6 +46,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation)
+
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(project(":core:ui"))
 }
