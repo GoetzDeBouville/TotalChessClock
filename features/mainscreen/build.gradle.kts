@@ -55,4 +55,5 @@ dependencies {
     implementation(libs.lottie)
 
     implementation(project(":core:ui"))
+    implementation(project(":core:database"))
 }
