@@ -41,135 +41,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_color" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_text">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:cardBackgroundColor="@color/main_cardview_color"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btn_15min10"
-                style="@style/MainButton"
-                android:text="15|10"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/logo_text" />
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:id="@+id/ll_firstline"
-            style="@style/LLItemsMain"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/btn_45min"
-                style="@style/MainButton"
-                android:text="45|0" />
-
-            <Button
-                android:id="@+id/btn_30min0"
-                style="@style/MainButton"
-                android:layout_marginStart="8dp"
-                android:text="30|0" />
-
-            <Button
-                android:id="@+id/btn_15min10"
-                android:layout_marginStart="8dp"
-                style="@style/MainButton"
-                android:text="15|10" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_secondline"
-            style="@style/LLItemsMain"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_firstline">
-
-            <Button
-                android:id="@+id/btn_10min5"
-                style="@style/MainButton"
-                android:text="10|5" />
-
-            <Button
-                android:id="@+id/btn_5min3"
-                style="@style/MainButton"
-                android:layout_marginStart="8dp"
-                android:text="5|3" />
-
-            <Button
-                android:id="@+id/btn_5min0"
-                style="@style/MainButton"
-                android:layout_marginStart="8dp"
-                android:text="5|0" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_thirdline"
-            style="@style/LLItemsMain"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="8dp"
-            android:paddingBottom="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_secondline">
-
-            <Button
-                android:id="@+id/btn3min2"
-                style="@style/MainButton"
-                android:text="3|2" />
-
-            <Button
-                android:id="@+id/btn_3min"
-                android:layout_marginStart="8dp"
-                style="@style/MainButton"
-                android:text="3|0" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/customizeTime"
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="12dp"
-                app:layout_constraintStart_toEndOf="@id/btn3min2"
-                app:layout_constraintTop_toBottomOf="@id/logo_text">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/globe_language"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="1dp"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/animation_settings" />
-
-                <View
-                    android:id="@+id/flFirstTimer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/coral_red" />
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
