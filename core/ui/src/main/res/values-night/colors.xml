@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="play_button_color">#FFFFFF</color>
+    <color name="text_color">#FFFFFE</color>
+    <color name="instruments_btn_color">#FFFFFE</color>
+    <color name="settings_topics_text_color">#D8A800</color>
+    <color name="background_transparent">#1AFFFFFF</color>
+    <color name="main_background_color">#010210</color>
+    <color name="default_timer_color">#4DBFC6</color>
+    <color name="main_cardview_color">#80010210</color>
+    <color name="button_color">#0DBD7E</color>
+
+</resources>
