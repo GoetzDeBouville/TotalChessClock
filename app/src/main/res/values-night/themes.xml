@@ -3,5 +3,8 @@
     <style name="Base.Theme.ChessClocks" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimaryDark">@color/main_background_color</item>
+        <item name="statusBarBackground">@color/main_background_color</item>
+        <item name="android:windowLightStatusBar">@color/main_background_color</item>
     </style>
 </resources>
