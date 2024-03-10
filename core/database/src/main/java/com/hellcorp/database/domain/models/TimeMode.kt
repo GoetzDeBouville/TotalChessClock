@@ -1,8 +1,9 @@
-package com.hellcorp.database
+package com.hellcorp.database.domain.models
 
 import java.text.SimpleDateFormat
 
-data class TimeModeEntity(
+data class TimeMode(
+    val id: Int,
     val name: String,
     val timeFirstPlayerMs: Long,
     val incrementFirstPlayerMs: Long = 0L,

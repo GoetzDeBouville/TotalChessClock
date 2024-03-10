@@ -2,7 +2,7 @@ package com.hellcorp.mainscreen.presentation.usersmodes
 
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hellcorp.database.TimeModeEntity
+import com.hellcorp.database.data.entity.TimeModeEntity
 import com.hellcorp.mainscreen.databinding.FragmentUsersModesBinding
 import com.hellcorp.mainscreen.presentation.adapters.TimeModeAdapter
 import com.hellcorp.ui.BaseFragment
