@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.basemodes.BaseModesFragment">
+
+    <LinearLayout
+        android:id="@+id/ll_firstline"
+        style="@style/LLItemsMain"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_secondline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_45min"
+            style="@style/MainButton"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="45|0" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_30min0"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="30|0" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_15min10"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="15|10" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_secondline"
+        style="@style/LLItemsMain"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_10min5"
+            style="@style/MainButton"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="10|5" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_5min3"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="5|3" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_5min0"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="5|0" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_thirdline"
+        style="@style/LLItemsMain"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_secondline">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn3min2"
+            style="@style/MainButton"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="3|2" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_3min"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/button_color">
+
+            <TextView
+                style="@style/Buttontext"
+                android:layout_gravity="center"
+                android:text="3|0" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/customizeTime"
+            style="@style/MainButton"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/coral_red">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/globe_language"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@android:color/transparent"
+                android:elevation="1dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/animation_settings" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

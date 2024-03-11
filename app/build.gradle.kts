@@ -56,4 +56,10 @@ dependencies {
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(project(":core:ui"))
+    implementation(project(":features:mainscreen"))
+    implementation(project(":features:clocks"))
+    implementation(project(":features:settings"))
+    implementation(project(":features:customizeclocks"))
 }

@@ -1,48 +1,52 @@
 package com.hellcorp.chessclocks
 
-import android.os.Bundle
-import android.util.SparseIntArray
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.graphics.Color
+import android.os.Build
+import android.view.View
+import android.view.WindowInsetsController
+import android.view.WindowManager
+import androidx.core.content.ContextCompat
+import com.hellcorp.chessclocks.databinding.ActivityMainBinding
+import com.hellcorp.ui.BaseActivity
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        val arr: SparseIntArray
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+    override fun initViews() {
+        setStatusBar()
     }
 
-    fun myPow(x: Double, n: Int): Double {
-        var result = 1.0
-        if(x == 1.0) {
-            return result
-        } else if (x == -1.0) {
-            if (n % 2 == 0) {
-                return x
+    @Suppress("DEPRECATION")
+    private fun setStatusBar() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor =
+            ContextCompat.getColor(this, com.hellcorp.ui.R.color.main_background_color)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!isColorDark(
+                    ContextCompat.getColor(
+                        this,
+                        com.hellcorp.ui.R.color.main_background_color
+                    )
+                )
+            ) {
+                window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             } else {
-                return result
+                window.decorView.systemUiVisibility = 0
             }
-        }
-        return if (n == 0) {
-            result
-        } else if (n > 0) {
-            for (i in 1..n) {
-                result *= x
-            }
-            result
-        } else {
-            for (i in -1 downTo n) {
-                result /= x
-            }
-            result
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.setSystemBarsAppearance(
+                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+            )
         }
     }
+
+    private fun isColorDark(color: Int): Boolean {
+        val darkness =
+            1 - (0.299 * Color.red(color) + 0.587 * Color.green(color) + 0.114 * Color.blue(color)) / 255
+        return darkness >= 0.5
+    }
+
 }
