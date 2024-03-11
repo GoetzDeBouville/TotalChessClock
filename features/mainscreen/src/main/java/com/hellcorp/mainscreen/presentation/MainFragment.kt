@@ -7,7 +7,9 @@ import com.hellcorp.mainscreen.presentation.adapters.ViewPagerAdapter
 import com.hellcorp.mainscreen.presentation.basemodes.BaseModesFragment
 import com.hellcorp.mainscreen.presentation.usersmodes.UsersModesFragment
 import com.hellcorp.ui.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment :
     BaseFragment<FragmentMainBinding, MainViewModel>(FragmentMainBinding::inflate) {
     override val viewModel by viewModels<MainViewModel>()
@@ -15,8 +17,7 @@ class MainFragment :
         initViewPager()
     }
 
-    override fun subscribe() {
-    }
+    override fun subscribe() = Unit
 
     private fun initViewPager() = with(binding) {
         viewpager.adapter = ViewPagerAdapter(

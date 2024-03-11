@@ -8,7 +8,10 @@ import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.hellcorp.chessclocks.databinding.ActivityMainBinding
 import com.hellcorp.ui.BaseActivity
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     override fun initViews() {
         setStatusBar()

@@ -16,5 +16,5 @@ interface TimeModesDao {
     suspend fun removeTimeMode(data: TimeModeEntity)
 
     @Query("SELECT * FROM time_mode_table ORDER BY timeFirstPlayerMs")
-    suspend fun getTimeModeList(): Flow<List<TimeModeEntity>>
+    fun getTimeModeList(): Flow<List<TimeModeEntity>>
 }
